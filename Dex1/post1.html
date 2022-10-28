@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <title>DEXTUTOR</title>
+    <link rel="stylesheet" type="text/css" href="index2.css" />
+    <script src="https://kit.fontawesome.com/67c66657c7.js"></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <input type="checkbox" id="check" />
+    <nav>
+     <div class= "icon">
+            <b ><a href="index.html" style="text-decoration: none;" >DEX</a></b><b><a href="index.html" style="color :grey; text-decoration: none;">TUTOR</a></b>
+        </div>
+      <div
+        class="search-box"
+        style="border: 2px #000 solid; border-radius: 20px"
+      >
+        <input type="search" placeholder="Search Here..." />
+        <span class="fa fa-search"></span>
+      </div>
+      <ol>
+        <li><a  href="index.html">Home</a></li>
+        <li><a href="blog2.html">Blog</a></li>
+        <li><a href="cources2.html">Courses</a></li>
+        <li><a href="qhub.html">Question Hub</a></li>
+        <li><a href="ppolicy.html">Privacy Policy</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ol>
+
+      <label for="check" class="bar">
+        <span class="fa fa-bars" id="bars"></span>
+        <span class="fa fa-times" id="times"></span>
+      </label>
+    </nav>
+
+
+<div class="container">
+        
+        <div class="blog-post">
+            
+            <div class="blog-post_info">
+                <h1 class="blog-post_title" style="color: black; Letter-spacing: 1px;
+     font-family: 'Kanit', sans-serif; text-align: justify;">
+<b>FCFS Algorithm Program in C</b></h1>
+                <p class="blog-post_text" style="color: #566573; text-align: justify;">
+
+Disk scheduling algorithms are used to come with an order in which the I/O read/write requests by the different process should be 
+satisfied. The aim is to minimize the seek time i.e., the time to move from one sector to another. First Come First Serve (FCFS) 
+disk scheduling algorithm serves the incoming requests in order i.e., the request which came first will be satisfied first.
+For example, if the order of I/O requests is 10, 40, 20, 50, 35 and the current head  position is 45, then the order of 
+fulfilling the requests will be <b>45 -> 10 -> 40 -> 20 -> 50 ->35</b> because the first request was for sector 10, then 40 and so on.
+For more details refer Page Replacement Algorithms. FCFS algorithm program in C is implemented below
+<br>
+<br>
+<b style="font-size: 18px;">Variable description for the program for FCFS disk scheduling algorithm</b>
+<br>
+<br>
+req[] – array for taking the request, mov – to calculate total head movement
+<br>
+<br>
+<b style="font-size: 18px;">FCFS Disk Scheduling Algorithm</b> Program in C 
+<br>
+<div style="background-color: rgb(241, 237, 237); padding-left: 10px; ">
+<pre>
+    <code>
+#include< math.h>
+#include< stdio.h>
+#include< stdlib.h>
+int main()
+{
+    int i,n,req[50],mov=0,cp;
+    printf("enter the current position\n");
+    scanf("%d",&cp);
+    printf("enter the number of requests\n");
+    scanf("%d",&n);
+    printf("enter the request order\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&req[i]);
+    }
+    mov=mov+abs(cp-req[0]); // abs is used to calculate the absolute value
+    printf("%d -> %d",cp,req[0]);
+    for(i=1;i<n;i++)
+    {
+        mov=mov+abs(req[i]-req[i-1]);
+        printf(" -> %d",req[i]);
+    }
+    printf("\n");
+    printf("total head movement = %d\n",mov);
+}
+    </code>
+</pre>
+</div>
+ <b style="font-size: 25px;">Output</b>
+ <br>
+ <br>
+ <img src="output1.png" alt="">
+ <br>
+ <br>
+ <b style="font-size: 24px;">How it works?</b>
+ <br>
+ <br>
+ In FCFS disk scheduling algorithm program the order of requests is stored in the req[] array. The movement between the requests is calculated by taking the absolute value of the difference between the values at consecutive index positions of the array. Finally, all the movements are added to get the total head movement.
+       <br>
+       <br>        
+<b style="font-size: 22px;">Relevant Programs</b>
+<br>
+<br>
+<ul>
+    <li>SSTF algorithm program in C</li>
+    <li>LOOK algorithm program in C</li>
+    <li>SCAN algorithm program in C</li>
+</ul>
+</p>
+<br>
+
+                
+            </div>
+        </div>
+    </div>
+
+
+
+        <!--  Footer -->
+    <footer style=" position: static ;
+    margin-top:0px;
+   
+    background: whitesmoke;
+    
+    padding-top: 20px;
+    width: 100vw;
+    color: #fff;">
+      <div class="footer-contents">
+        <!---- <h3>DEXTUTOR</h3> -->
+       <!---- <p>............................................</p> -->
+      </div>
+      <div class="copyright">
+        Copyright © 2022 Dextutor 
+      </div>
+    </footer>
+</body>
+</html
+
